@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://iampaul83.github.io/react_923/2017/09/22/props_state_event/index.html">
 <meta property="og:site_name" content="React 讀書會">
 <meta property="og:description" content="文章連結 https://github.com/kdchang/reactjs101/blob/master/Ch04/props-state-introduction.md 1. props驗證與預設值針對傳入的 props 設計驗證和預設值，讓我們撰寫的元件可以更加穩定健壯（robust）。 在以下的例子中，使用 Welcome 的人沒有正確使用，導致 Welcome 無法正確顯示。驗證器會將">
-<meta property="og:updated_time" content="2017-09-22T17:01:01.000Z">
+<meta property="og:updated_time" content="2017-09-22T17:13:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Props、State、Refs 與表單處理">
 <meta name="twitter:description" content="文章連結 https://github.com/kdchang/reactjs101/blob/master/Ch04/props-state-introduction.md 1. props驗證與預設值針對傳入的 props 設計驗證和預設值，讓我們撰寫的元件可以更加穩定健壯（robust）。 在以下的例子中，使用 Welcome 的人沒有正確使用，導致 Welcome 無法正確顯示。驗證器會將">
@@ -91,8 +91,8 @@
       
         <p>文章連結 <a href="https://github.com/kdchang/reactjs101/blob/master/Ch04/props-state-introduction.md" target="_blank" rel="external">https://github.com/kdchang/reactjs101/blob/master/Ch04/props-state-introduction.md</a></p>
 <h1 id="1-props驗證與預設值"><a href="#1-props驗證與預設值" class="headerlink" title="1. props驗證與預設值"></a>1. props驗證與預設值</h1><p>針對傳入的 props 設計驗證和預設值，讓我們撰寫的元件可以更加穩定健壯（robust）。</p>
-<p>在以下的例子中，使用 Welcome 的人沒有正確使用，導致 Welcome 無法正確顯示。驗證器會將錯誤訊息寫在 console，已協助我們除錯。</p>
-<h2 id="作業："><a href="#作業：" class="headerlink" title="作業："></a>作業：</h2><p>請按下面的 <code>EDIT ON CODEPEN</code>，把 Welcome 依照驗證器指定的格式修復好。</p>
+<p>在以下的例子中，使用 Welcome 的人沒有正確使用，導致 Welcome 無法正確顯示。驗證器會將錯誤訊息寫在 console，以協助我們除錯。</p>
+<h2 id="作業一："><a href="#作業一：" class="headerlink" title="作業一："></a>作業一：</h2><p>請按下面的 <code>EDIT ON CODEPEN</code>，把 Welcome 依照驗證器指定的格式修復好。</p>
 <h2 id="NOTE"><a href="#NOTE" class="headerlink" title="NOTE:"></a><strong>NOTE:</strong></h2><p>React v15.5 之後，教學裡使用的 <code>React.PropTypes</code> 被獨立出來了，因此需要額外安裝。以下範例已經有安裝好了。<br>安裝教學：<a href="https://github.com/facebook/prop-types" target="_blank" rel="external">https://github.com/facebook/prop-types</a></p>
 <iframe height="411" scrolling="no" title="Typechecking With PropTypes" src="//codepen.io/iampaul83/embed/mBrpzy/?height=411&theme-id=0&default-tab=js,result&embed-version=2" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="https://codepen.io/iampaul83/pen/mBrpzy/" target="_blank" rel="external">Typechecking With PropTypes</a> by Paul Tsai (<a href="https://codepen.io/iampaul83" target="_blank" rel="external">@iampaul83</a>) on <a href="https://codepen.io" target="_blank" rel="external">CodePen</a>.<br></iframe>
 
@@ -102,8 +102,8 @@
 <blockquote>
 <p><code>setState</code>時，不能應該使用<code>this.state</code>的值</p>
 </blockquote>
-<p>解決方法是：<br>傳入一個<code>function</code>給<code>setState</code>，使用這個function的prevState與props參數來設定下一個state:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.setState(<span class="function">(<span class="params">prevState, props</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">return</span> &#123;<span class="attr">secondsElapsed</span>: prevState.secondsElapsed + <span class="number">1</span>&#125;;</div><div class="line">&#125;)<span class="string">`</span></div></pre></td></tr></table></figure></p>
-<h2 id="作業：-1"><a href="#作業：-1" class="headerlink" title="作業："></a>作業：</h2><p>請按下面的 <code>EDIT ON CODEPEN</code>，依照上面的方式修正，讓畫面正常顯示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">count1 == 1</div><div class="line">count2 == 0</div></pre></td></tr></table></figure></p>
+<p>解決方法是：<br>傳入一個<code>function</code>給<code>setState</code>，使用這個function的prevState與props參數來設定下一個state:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.setState(<span class="function">(<span class="params">prevState, props</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">return</span> &#123;<span class="attr">secondsElapsed</span>: prevState.secondsElapsed + <span class="number">1</span>&#125;;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<h2 id="作業二："><a href="#作業二：" class="headerlink" title="作業二："></a>作業二：</h2><p>請按下面的 <code>EDIT ON CODEPEN</code>，依照上面的方式修正，讓畫面正常顯示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">count1 == 1</div><div class="line">count2 == 0</div></pre></td></tr></table></figure></p>
 <iframe height="441" scrolling="no" title="state陷阱" src="//codepen.io/iampaul83/embed/PJGRaX/?height=441&theme-id=0&default-tab=js,result&embed-version=2" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="https://codepen.io/iampaul83/pen/PJGRaX/" target="_blank" rel="external">state陷阱</a> by Paul Tsai (<a href="https://codepen.io/iampaul83" target="_blank" rel="external">@iampaul83</a>) on <a href="https://codepen.io" target="_blank" rel="external">CodePen</a>.<br></iframe>
 
 
@@ -129,16 +129,16 @@
 </tr>
 </tbody>
 </table>
-<h2 id="作業"><a href="#作業" class="headerlink" title="作業"></a>作業</h2><p>請加下面的 HTML 語法，改成用 JSX 撰寫</p>
+<h2 id="作業三："><a href="#作業三：" class="headerlink" title="作業三："></a>作業三：</h2><p>請加下面的 HTML 語法，改成用 JSX 撰寫</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"activateLasers()"</span>&gt;</span></div><div class="line">  Activate Lasers</div><div class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="可略過作業"><a href="#可略過作業" class="headerlink" title="可略過作業"></a>可略過作業</h2><p>請加下面的 HTML 語法，改成用 JSX 撰寫</p>
+<h2 id="可略過的作業四："><a href="#可略過的作業四：" class="headerlink" title="可略過的作業四："></a>可略過的作業四：</h2><p>請加下面的 HTML 語法，改成用 JSX 撰寫</p>
 <iframe height="157" scrolling="no" title="pWEKoa" src="//codepen.io/iampaul83/embed/pWEKoa/?height=157&theme-id=0&default-tab=html,result&embed-version=2" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="https://codepen.io/iampaul83/pen/pWEKoa/" target="_blank" rel="external">pWEKoa</a> by Paul Tsai (<a href="https://codepen.io/iampaul83" target="_blank" rel="external">@iampaul83</a>) on <a href="https://codepen.io" target="_blank" rel="external">CodePen</a>.<br></iframe>
 
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://iampaul83.github.io/react_923/2017/09/22/props_state_event/" data-id="cj7w50xge0000a0zp2vpqan3p" class="article-share-link">Share</a>
+      <a data-url="https://iampaul83.github.io/react_923/2017/09/22/props_state_event/" data-id="cj7w5bn730000pczpx7hlfo7v" class="article-share-link">Share</a>
       
       
     </footer>
