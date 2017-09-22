@@ -4,7 +4,7 @@
 
 # Site
 title: React 讀書會
-subtitle: 9/22 練習題
+subtitle: 9/23 練習題
 description:
 author: iampaul83
 language: 
@@ -12,8 +12,8 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://iampaul83.github.io/react-922/
-root: /react-922/
+url: https://iampaul83.github.io/react_923/
+root: /react_923/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -78,6 +78,6 @@ theme: landscape
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/iampaul83/react_922.git
-  branch: master
+  repo: https://github.com/iampaul83/react_923.git
+  branch: gh-pages
   # message: Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}
