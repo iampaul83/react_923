@@ -43,10 +43,10 @@ this.setState((prevState, props) => {
 ```
 
 ## 作業二：
-請按下面的 `EDIT ON CODEPEN`，依照上面的方式修正，讓畫面正常顯示：
+請按下面的 `EDIT ON CODEPEN`，依照上面的方式修正，讓畫面正常顯示成以下結果：
 ```
 count1 == 1
-count2 == 0
+count2 == 1
 ```
 
 <iframe height='441' scrolling='no' title='state陷阱' src='//codepen.io/iampaul83/embed/PJGRaX/?height=441&theme-id=0&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/iampaul83/pen/PJGRaX/'>state陷阱</a> by Paul Tsai (<a href='https://codepen.io/iampaul83'>@iampaul83</a>) on <a href='https://codepen.io'>CodePen</a>.
