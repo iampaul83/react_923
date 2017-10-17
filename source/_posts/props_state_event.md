@@ -57,10 +57,10 @@ count2 == 1
 
 JSX 和 HTML 的 event 語法不太一樣：
 
-| JSX | HTML | 說明 |
+| HTML | JSX | 說明 |
 | --- | ---- | --- |
-| onclick | onClick | JSX 要用 camelCase 命名規則 |
-| `onclick="someFunction()"` | onClick={someFunction} | JSX 要使用 `{ aFunction }` 的語法 |
+| `onclick` | `onClick` | JSX 要用 camelCase 命名規則 |
+| `onclick="someFunction()"` | `onClick={someFunction}` | JSX 要使用 `{ aFunction }` 的語法 |
 
 ## 作業三：
 請加下面的 HTML 語法，改成用 JSX 撰寫
